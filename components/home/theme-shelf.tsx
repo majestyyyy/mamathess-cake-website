@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { CakeImage } from '@/components/cake-image'
 import { SectionLabel } from '@/components/decor'
 import { cakes, themes, type ThemeSlug } from '@/lib/cakes'
 
@@ -40,7 +40,7 @@ export function ThemeShelf() {
                 href={`/cakes?theme=${theme.slug}`}
                 className="group relative flex h-full min-h-48 flex-col justify-end overflow-hidden rounded-3xl bg-lilac ring-1 ring-plum/10"
               >
-                <Image
+                <CakeImage
                   src={coverImage}
                   alt=""
                   fill

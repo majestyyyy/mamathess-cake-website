@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { IcingEdge, Sparkle } from '@/components/decor'
+import { CakeImage } from '@/components/cake-image'
 import { cn } from '@/lib/utils'
 
 const parade = [
@@ -60,7 +60,7 @@ export function Hero() {
               cake.hide && 'hidden sm:block',
             )}
           >
-            <Image
+            <CakeImage
               src={cake.src}
               alt={cake.alt}
               fill

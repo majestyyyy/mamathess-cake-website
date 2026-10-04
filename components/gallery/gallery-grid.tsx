@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { CakeImage } from '@/components/cake-image'
 import { cakes, formatPeso, getTheme, themes, type ThemeSlug } from '@/lib/cakes'
 import { cn } from '@/lib/utils'
 
@@ -57,7 +57,7 @@ export function GalleryGrid() {
                 aspects[i % aspects.length],
               )}
             >
-              <Image
+              <CakeImage
                 src={cake.image}
                 alt={cake.name}
                 fill
@@ -88,7 +88,7 @@ export function GalleryGrid() {
         {current && (
           <div className="grid md:grid-cols-[1.3fr_1fr]">
             <div className="relative aspect-square bg-lilac-soft">
-              <Image src={current.image} alt={current.name} fill sizes="(min-width: 768px) 55vw, 92vw" className="object-cover" />
+              <CakeImage src={current.image} alt={current.name} fill sizes="(min-width: 768px) 55vw, 92vw" className="object-cover" />
             </div>
             <div className="flex flex-col p-6">
               <div className="flex items-start justify-between gap-4">

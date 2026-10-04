@@ -1,12 +1,12 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { CakeImage } from '@/components/cake-image'
 import { type Cake, formatPeso } from '@/lib/cakes'
 
 export function CakeCard({ cake }: { cake: Cake }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-plum/10 transition-shadow hover:shadow-[0_12px_40px_-12px_var(--plum)]">
       <div className="relative aspect-[4/3] overflow-hidden bg-lilac-soft">
-        <Image
+        <CakeImage
           src={cake.image}
           alt={cake.name}
           fill
