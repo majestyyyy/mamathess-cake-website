@@ -2,13 +2,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { SectionLabel } from '@/components/decor'
-import { cakes, themes } from '@/lib/cakes'
+import { cakes, themes, type ThemeSlug } from '@/lib/cakes'
+
+const coverImages: Record<ThemeSlug, string> = {
+  debut: '/images/cakes/11.svg',
+  wedding: '/images/cakes/10.svg',
+  'kids-character': '/images/cakes/3.svg',
+  milestone: '/images/cakes/9.svg',
+  'baby-christening': '/images/cakes/2.svg',
+  'custom-designer': '/images/cakes/7.svg',
+  'bento-cupcakes': '/images/cakes/11.svg',
+}
 
 export function ThemeShelf() {
   const items = themes.map((theme) => {
-    const cover = cakes.find((c) => c.theme === theme.slug)!
     const count = cakes.filter((c) => c.theme === theme.slug).length
-    return { theme, cover, count }
+    return { theme, count, coverImage: coverImages[theme.slug] }
   })
 
   return (
@@ -25,14 +34,14 @@ export function ThemeShelf() {
         </div>
 
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-          {items.map(({ theme, cover, count }, i) => (
+          {items.map(({ theme, coverImage, count }, i) => (
             <li key={theme.slug} className={i === 0 ? 'col-span-2 row-span-2' : ''}>
               <Link
                 href={`/cakes?theme=${theme.slug}`}
                 className="group relative flex h-full min-h-48 flex-col justify-end overflow-hidden rounded-3xl bg-lilac ring-1 ring-plum/10"
               >
                 <Image
-                  src={cover.image}
+                  src={coverImage}
                   alt=""
                   fill
                   sizes={i === 0 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'}

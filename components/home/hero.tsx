@@ -4,11 +4,12 @@ import { IcingEdge, Sparkle } from '@/components/decor'
 import { cn } from '@/lib/utils'
 
 const parade = [
-  { src: '/images/cakes/kawaii-floral.png', alt: 'Peach ruffle debut cake with roses', h: 'h-44 md:h-60', hide: false },
-  { src: '/images/cakes/wedding-couple.png', alt: 'Blue three-tier wedding cake with couple topper', h: 'h-56 md:h-80', hide: false },
-  { src: '/images/cakes/handbag.png', alt: 'Sculpted handbag cake with sugar heel', h: 'h-48 md:h-64', hide: true },
-  { src: '/images/cakes/pony-drip.png', alt: 'Pink pony drip cake with unicorn figures', h: 'h-52 md:h-72', hide: false },
-  { src: '/images/cakes/debut-crown.png', alt: 'Two-tier debut cake topped with a tiara', h: 'h-44 md:h-[22rem]', hide: true },
+  { src: '/images/cakes/2.svg', alt: 'Blue tiered birthday cake decorated with butterflies', h: 'h-44 md:h-60', hide: false },
+  { src: '/images/cakes/10.svg', alt: 'White tiered wedding cake with roses and gold accents', h: 'h-56 md:h-80', hide: false },
+  { src: '/images/cakes/3.svg', alt: 'Purple character-themed celebration cake', h: 'h-48 md:h-64', hide: true },
+  { src: '/images/cakes/7.svg', alt: 'Pastel first-birthday cake with rainbow details', h: 'h-52 md:h-72', hide: false },
+  { src: '/images/cakes/9.svg', alt: 'Gold 60th birthday drip cake', h: 'h-44 md:h-[22rem]', hide: true },
+  { src: '/images/cakes/11.svg', alt: 'Pink birthday cake with a piped arch', h: 'h-48 md:h-64', hide: true },
 ]
 
 export function Hero() {
@@ -54,7 +55,7 @@ export function Hero() {
           <div
             key={cake.src}
             className={cn(
-              'relative w-28 overflow-hidden rounded-t-full border-4 border-b-0 border-white/90 bg-lilac-soft shadow-lg sm:w-36 md:w-44',
+              'relative w-28 overflow-hidden rounded-t-full border-4 border-b-0 border-white/90 bg-lilac-soft shadow-lg sm:w-36 md:w-40',
               cake.h,
               cake.hide && 'hidden sm:block',
             )}
@@ -64,7 +65,7 @@ export function Hero() {
               alt={cake.alt}
               fill
               priority={i < 3}
-              sizes="(min-width: 768px) 176px, 144px"
+              sizes="(min-width: 768px) 160px, 144px"
               className="object-cover object-bottom"
             />
           </div>
