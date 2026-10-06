@@ -32,6 +32,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/cake-101" className="text-primary-foreground/80 hover:text-blush">
+                Cake 101
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="text-primary-foreground/80 hover:text-blush">
                 Contact
               </Link>
