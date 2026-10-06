@@ -7,7 +7,7 @@ import { PageIntro } from '@/components/page-intro'
 export const metadata: Metadata = {
   title: 'About Mama Thess',
   description:
-    'Get to know Mama Thess: from learning to bake as a personal hobby to creating custom cakes and cupcakes, studying baking through TESDA, and teaching baking lessons.',
+    'Get to know Mama Thess: from baking cakes, breads, sweets, and snacks as a personal hobby to creating custom cakes and cupcakes, studying baking through TESDA, and teaching baking lessons.',
 }
 
 const storyPhotos = [
@@ -72,8 +72,8 @@ export default function AboutPage() {
           </h2>
           <div className="mt-5 space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
-              Mama Thess began learning to bake simply because she enjoyed it. Cake-making started as a personal
-              hobby, a chance to practice new skills and bring creative ideas to life.
+              Mama Thess began learning to bake simply because she enjoyed it. She explored making cakes, breads,
+              sweets, and snacks as a personal hobby—a chance to practice new skills and bring creative ideas to life.
             </p>
             <p>
               With time and dedication, that hobby grew into a business. Today, she creates customized cakes and

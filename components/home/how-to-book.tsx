@@ -11,7 +11,7 @@ const steps = [
     body: 'We confirm size, flavor and design details, then send the price. A 50% downpayment locks your slot.',
   },
   {
-    title: 'Pick up in Pateros',
+    title: 'Deliver or Pick up in Pateros',
     body: 'Collect your cake at Poblacion, or ask us about delivery nearby. We box it safe for the ride.',
   },
 ]

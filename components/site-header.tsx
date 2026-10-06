@@ -11,7 +11,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/cake-101', label: 'Cake 101' },
 ]
 
 export function SiteHeader() {
