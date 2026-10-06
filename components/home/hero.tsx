@@ -42,10 +42,10 @@ export function Hero() {
             Book your cake
           </Link>
           <Link
-            href="/cakes"
+            href="/gallery"
             className="label-caps rounded-full border-2 border-plum bg-white/70 px-7 py-3 text-sm text-plum transition-colors hover:bg-white"
           >
-            Browse by theme
+            Browse the gallery
           </Link>
         </div>
       </div>

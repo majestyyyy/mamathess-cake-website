@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { MapPin, Phone } from 'lucide-react'
 import { Facebook } from '@/components/decor'
 import { IcingEdge } from '@/components/decor'
-import { shop, themes } from '@/lib/cakes'
+import { shop } from '@/lib/cakes'
 
 export function SiteFooter() {
   return (
@@ -19,15 +19,23 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="label-caps text-sm text-gold">Cake themes</h2>
+          <h2 className="label-caps text-sm text-gold">Explore</h2>
           <ul className="mt-4 space-y-2">
-            {themes.map((t) => (
-              <li key={t.slug}>
-                <Link href={`/cakes?theme=${t.slug}`} className="text-primary-foreground/80 hover:text-blush">
-                  {t.name}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link href="/" className="text-primary-foreground/80 hover:text-blush">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery" className="text-primary-foreground/80 hover:text-blush">
+                Cake gallery
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-primary-foreground/80 hover:text-blush">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { CakeImage } from '@/components/cake-image'
-import { cakes, formatPeso, getTheme, themes, type ThemeSlug } from '@/lib/cakes'
+import { formatPeso, galleryPhotos, getTheme, themes, type ThemeSlug } from '@/lib/cakes'
 import { cn } from '@/lib/utils'
 
 const aspects = ['aspect-[4/5]', 'aspect-square', 'aspect-[3/4]', 'aspect-[5/6]', 'aspect-square', 'aspect-[4/5]']
@@ -14,7 +14,7 @@ export function GalleryGrid() {
   const [index, setIndex] = useState(0)
   const dialogRef = useRef<HTMLDialogElement>(null)
 
-  const visible = filter === 'all' ? cakes : cakes.filter((c) => c.theme === filter)
+  const visible = filter === 'all' ? galleryPhotos : galleryPhotos.filter((photo) => photo.theme === filter)
   const current = visible[index]
 
   const open = (i: number) => {
@@ -103,25 +103,29 @@ export function GalleryGrid() {
                 </button>
               </div>
               <h2 className="mt-2 text-3xl font-extrabold uppercase leading-tight text-plum">{current.name}</h2>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{current.description}</p>
-              <dl className="mt-5 flex-1 space-y-2 text-sm">
-                {[
-                  ['Starts at', formatPeso(current.priceFrom)],
-                  ['Size', current.sizes],
-                  ['Serves', current.serves],
-                  ['Order', `${current.leadTime} ahead`],
-                ].map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-4 border-b border-dashed border-plum/15 pb-2">
-                    <dt className="label-caps text-xs text-muted-foreground">{k}</dt>
-                    <dd className="font-bold text-plum-deep">{v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                {current.cake?.description ?? 'A custom cake design made by Mama Thess. Contact us to create one for your celebration.'}
+              </p>
+              {current.cake && (
+                <dl className="mt-5 flex-1 space-y-2 text-sm">
+                  {[
+                    ['Starts at', formatPeso(current.cake.priceFrom)],
+                    ['Size', current.cake.sizes],
+                    ['Serves', current.cake.serves],
+                    ['Order', `${current.cake.leadTime} ahead`],
+                  ].map(([k, v]) => (
+                    <div key={k} className="flex justify-between gap-4 border-b border-dashed border-plum/15 pb-2">
+                      <dt className="label-caps text-xs text-muted-foreground">{k}</dt>
+                      <dd className="font-bold text-plum-deep">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
               <Link
-                href={`/contact?cake=${current.id}`}
+                href={current.cake ? `/contact?cake=${current.cake.id}` : '/contact'}
                 className="label-caps mt-6 rounded-full bg-plum py-3 text-center text-sm text-primary-foreground shadow-[0_4px_0_var(--plum-deep)]"
               >
-                I want this cake
+                {current.cake ? 'I want this cake' : 'Ask about a similar cake'}
               </Link>
               <div className="mt-4 flex items-center justify-between">
                 <button

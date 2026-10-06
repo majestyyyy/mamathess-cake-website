@@ -2,21 +2,21 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { CakeImage } from '@/components/cake-image'
 import { SectionLabel } from '@/components/decor'
-import { cakes, themes, type ThemeSlug } from '@/lib/cakes'
+import { galleryPhotos, themes, type ThemeSlug } from '@/lib/cakes'
 
 const coverImages: Record<ThemeSlug, string> = {
-  debut: '/images/cakes/11.svg',
-  wedding: '/images/cakes/10.svg',
-  'kids-character': '/images/cakes/3.svg',
-  milestone: '/images/cakes/9.svg',
-  'baby-christening': '/images/cakes/2.svg',
-  'custom-designer': '/images/cakes/7.svg',
-  'bento-cupcakes': '/images/cakes/11.svg',
+  debut: '/images/cakes/debuttttt.webp',
+  wedding: '/images/cakes/wedding.webp',
+  'kids-character': '/images/cakes/cartoonn.webp',
+  milestone: '/images/cakes/number cake.webp',
+  'baby-christening': '/images/cakes/baptism.webp',
+  'custom-designer': '/images/cakes/birthdayyy.webp',
+  'bento-cupcakes': '/images/cakes/birthday (2).webp',
 }
 
 export function ThemeShelf() {
   const items = themes.map((theme) => {
-    const count = cakes.filter((c) => c.theme === theme.slug).length
+    const count = galleryPhotos.filter((photo) => photo.theme === theme.slug).length
     return { theme, count, coverImage: coverImages[theme.slug] }
   })
 
@@ -25,11 +25,11 @@ export function ThemeShelf() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <SectionLabel>Shop by theme</SectionLabel>
+            <SectionLabel>Browse the gallery</SectionLabel>
             <h2 className="mt-3 font-script text-5xl text-plum md:text-6xl">What are we celebrating?</h2>
           </div>
-          <Link href="/cakes" className="label-caps text-sm text-plum underline decoration-gold decoration-2 underline-offset-8">
-            See all cakes
+          <Link href="/gallery" className="label-caps text-sm text-plum underline decoration-gold decoration-2 underline-offset-8">
+            See all cake photos
           </Link>
         </div>
 
@@ -37,7 +37,7 @@ export function ThemeShelf() {
           {items.map(({ theme, coverImage, count }, i) => (
             <li key={theme.slug} className={i === 0 ? 'col-span-2 row-span-2' : ''}>
               <Link
-                href={`/cakes?theme=${theme.slug}`}
+                href="/gallery"
                 className="group relative flex h-full min-h-48 flex-col justify-end overflow-hidden rounded-3xl bg-lilac ring-1 ring-plum/10"
               >
                 <CakeImage
