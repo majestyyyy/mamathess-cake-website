@@ -32,7 +32,7 @@ export function ContactStrip() {
                   <a
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
-                    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex h-full items-center gap-4 rounded-2xl bg-white/80 p-4 transition-colors hover:bg-white"
                   >
                     {content}

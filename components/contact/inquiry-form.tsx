@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Check, Copy, MessageSquare } from 'lucide-react'
 import { services, shop } from '@/lib/cakes'
+import { sanitizeInput, sanitizePhone } from '@/lib/utils'
 
 type Option = { id: string; name: string }
 
@@ -18,17 +19,33 @@ export function InquiryForm({ cakes, defaultCake }: { cakes: Option[]; defaultCa
 
   function buildMessage(form: HTMLFormElement) {
     const data = new FormData(form)
-    const cakeId = String(data.get('cake') ?? '')
+
+    // Honeypot spam check: if the hidden field is filled, silently discard spam payload
+    const honeypot = data.get('_hp_security_check')
+    if (honeypot) {
+      return null
+    }
+
+    const name = sanitizeInput(data.get('name'), 80)
+    const phone = sanitizePhone(data.get('phone'))
+    const occasion = sanitizeInput(data.get('occasion'), 50)
+    const cakeId = sanitizeInput(data.get('cake'), 50)
     const cakeName = cakes.find((c) => c.id === cakeId)?.name
+    const dateNeeded = sanitizeInput(data.get('date'), 20)
+    const guests = sanitizeInput(data.get('guests'), 10)
+    const notes = sanitizeInput(data.get('notes'), 800)
+
+    if (!name || !phone) return null
+
     const lines = [
       `Hi Mama Thess! I'd like to inquire about a cake.`,
-      `Name: ${data.get('name')}`,
-      `Contact: ${data.get('phone')}`,
-      `Occasion: ${data.get('occasion')}`,
+      `Name: ${name}`,
+      `Contact: ${phone}`,
+      `Occasion: ${occasion}`,
       cakeName ? `Design: ${cakeName}` : null,
-      `Date needed: ${data.get('date')}`,
-      `Guests: ${data.get('guests')}`,
-      data.get('notes') ? `Notes: ${data.get('notes')}` : null,
+      `Date needed: ${dateNeeded}`,
+      `Guests: ${guests}`,
+      notes ? `Notes: ${notes}` : null,
     ]
     return lines.filter(Boolean).join('\n')
   }
@@ -51,13 +68,35 @@ export function InquiryForm({ cakes, defaultCake }: { cakes: Option[]; defaultCa
         className="mt-6 grid gap-5 sm:grid-cols-2"
         onSubmit={(e) => {
           e.preventDefault()
-          setMessage(buildMessage(e.currentTarget))
-          setCopied(false)
+          const prepared = buildMessage(e.currentTarget)
+          if (prepared) {
+            setMessage(prepared)
+            setCopied(false)
+          }
         }}
       >
+        {/* Anti-bot / Honeypot security field */}
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="_hp_security_check">Leave this field empty</label>
+          <input
+            id="_hp_security_check"
+            name="_hp_security_check"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         <label className="block">
           <span className={labelClass}>Your name</span>
-          <input name="name" required autoComplete="name" className={fieldClass} placeholder="Juana Dela Cruz" />
+          <input
+            name="name"
+            required
+            maxLength={80}
+            autoComplete="name"
+            className={fieldClass}
+            placeholder="Juana Dela Cruz"
+          />
         </label>
         <label className="block">
           <span className={labelClass}>Mobile number</span>
@@ -65,9 +104,10 @@ export function InquiryForm({ cakes, defaultCake }: { cakes: Option[]; defaultCa
             name="phone"
             required
             type="tel"
+            maxLength={20}
             inputMode="tel"
             autoComplete="tel"
-            pattern="[0-9+\s\-]{7,16}"
+            pattern="[0-9+\s\-()]{7,20}"
             className={fieldClass}
             placeholder="09XX XXX XXXX"
           />

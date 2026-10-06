@@ -62,7 +62,7 @@ export function SiteFooter() {
               <a
                 href={shop.facebookUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-blush"
               >
                 <Facebook className="mt-1 size-4 shrink-0 text-blush" />

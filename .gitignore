@@ -1,9 +1,39 @@
+# Next.js & Vercel
+.next/
+out/
 .vercel/
 
-# Environment variables
-.env*.local
+# Cloudflare Pages / Workers
+.wrangler/
+.dev.vars
+.dev.vars.*
 
-# Common ignores
-node_modules
-.next/
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment Variables & Secrets (Prevent accidental leaks)
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+.env.staging
+*.pem
+*.key
+*.cert
+
+# Operating System & IDE
 .DS_Store
+*.pem
+.idea/
+.vscode/
+*.swp
+*.swo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+tsconfig.tsbuildinfo

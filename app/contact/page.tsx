@@ -42,7 +42,12 @@ export default async function ContactPage({
                 </a>
               </li>
               <li>
-                <a href={shop.facebookUrl} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-blush">
+                <a
+                  href={shop.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-blush"
+                >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/10">
                     <Facebook className="size-4" />
                   </span>
@@ -78,6 +83,7 @@ export default async function ContactPage({
               className="h-56 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             />
           </div>
         </aside>

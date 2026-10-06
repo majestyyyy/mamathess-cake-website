@@ -1,0 +1,9 @@
+# Mama Thess Cakes and Pastries Security Policy
+# RFC 9116 - A File Format to Aid in Security Vulnerability Disclosure
+
+Contact: tel:+639391266821
+Contact: https://www.facebook.com/mamathesscakedesign
+Expires: 2028-01-01T00:00:00.000Z
+Preferred-Languages: en, fil
+Canonical: https://mamathesscakedesign.com/.well-known/security.txt
+Policy: https://mamathesscakedesign.com/about
