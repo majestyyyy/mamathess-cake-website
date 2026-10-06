@@ -214,6 +214,15 @@ const additionalGalleryPhotos: GalleryPhoto[] = [
   { id: 'race-car-birthday-cake', name: 'Race Car Birthday Cake', theme: 'kids-character', image: '/images/cakes/race-car-birthday-cake.webp' },
   { id: 'kpop-debut-cake', name: 'K-pop Debut Cake', theme: 'debut', image: '/images/cakes/kpop-debut-cake.webp' },
   { id: 'white-wedding-cake', name: 'Classic White Wedding Cake', theme: 'wedding', image: '/images/cakes/white-wedding-cake.webp' },
+  { id: 'photo-print-birthday', name: 'Photo Print Birthday Cake', theme: 'milestone', image: '/images/cakes/new cake/new again/470193430_1294552745032199_9184614795322337263_n.webp' },
+  { id: 'construction-theme-cake', name: 'Construction Theme Cake', theme: 'kids-character', image: '/images/cakes/new cake/new again/470206885_1294552388365568_4986290336289946899_n.webp' },
+  { id: 'blue-tiered-celebration', name: 'Blue Tiered Celebration Cake', theme: 'baby-christening', image: '/images/cakes/new cake/new again/470211619_1294552698365537_8119894095967445895_n.webp' },
+  { id: 'safari-tiered-birthday', name: 'Safari Tiered Birthday Cake', theme: 'kids-character', image: '/images/cakes/new cake/new again/470226383_1294552401698900_4039813422010718828_n.webp' },
+  { id: 'pink-rosette-photo-cake', name: 'Pink Rosette Photo Cake', theme: 'milestone', image: '/images/cakes/new cake/new again/470230267_1295151631638977_8987998642002404498_n.webp' },
+  { id: 'blue-photo-print-birthday', name: 'Blue Photo Print Birthday Cake', theme: 'milestone', image: '/images/cakes/new cake/new again/470564603_1295151604972313_8326887020127337683_n.webp' },
+  { id: 'number-three-birthday-cake', name: 'Number 3 Birthday Cake', theme: 'kids-character', image: '/images/cakes/new cake/new again/471412401_1304069570747183_394304464070585717_n.webp' },
+  { id: 'golden-crown-birthday-cake', name: 'Golden Crown Birthday Cake', theme: 'milestone', image: '/images/cakes/new cake/new again/471548588_1304069517413855_1104565590921463128_n.webp' },
+  { id: 'chocolate-cookie-drip-cake', name: 'Chocolate Cookie Drip Cake', theme: 'milestone', image: '/images/cakes/new cake/new again/471746072_1304069564080517_7049686878888419956_n.webp' },
 ]
 
 export const galleryPhotos: GalleryPhoto[] = [
