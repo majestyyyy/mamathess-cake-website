@@ -264,7 +264,7 @@ export function InquiryForm({ cakes, defaultCake }: { cakes: Option[]; defaultCa
           <input name="date" type="date" required min={today} className={fieldClass} disabled={isSubmitting} />
         </label>
         <label className="block">
-          <span className={labelClass}>Number of guests</span>
+          <span className={labelClass}>Number of guests / students</span>
           <input
             name="guests"
             type="number"
@@ -272,18 +272,18 @@ export function InquiryForm({ cakes, defaultCake }: { cakes: Option[]; defaultCa
             max={500}
             required
             className={fieldClass}
-            placeholder="30"
+            placeholder="15"
             disabled={isSubmitting}
           />
         </label>
         <label className="block sm:col-span-2">
-          <span className={labelClass}>Tell us about your dream cake</span>
+          <span className={labelClass}>Tell us about your cake or workshop request</span>
           <textarea
             name="notes"
             rows={4}
             maxLength={800}
             className={fieldClass}
-            placeholder="Colors, flavor, name to write, topper, any reference photo you'll send..."
+            placeholder="For cakes: colors, flavor, name to write, topper. For workshops: desired product (e.g. bento cake, cupcakes, basic sponge), venue, or whether solo or group mentoring..."
             disabled={isSubmitting}
           />
         </label>

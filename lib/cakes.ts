@@ -679,6 +679,8 @@ export const services = [
   'Letter Cakes',
   'Wedding Cakes',
   'Baptismal Cakes',
+  'Basic Baking Workshops (Guest Instructor)',
+  'Home Kitchen Mentoring (Solo or Group)',
 ]
 
 export const shop = {

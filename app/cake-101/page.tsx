@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { LucideIcon } from 'lucide-react'
 import { CakeSlice, Clock3, Egg, Layers3, Paintbrush, Printer, Scale, Snowflake, Sparkles, Thermometer } from 'lucide-react'
@@ -205,6 +206,33 @@ export default function Cake101Page() {
         items={cakeTrivia}
         tinted
       />
+      {/* Workshop Callout */}
+      <section className="mx-4 mb-14 rounded-[2rem] border-2 border-plum/15 bg-lilac-soft p-8 text-center md:mx-auto md:max-w-4xl md:p-10">
+        <span className="label-caps inline-block rounded-full bg-plum/10 px-4 py-1.5 text-xs text-plum font-bold">
+          Hands-on Baking Workshops
+        </span>
+        <h3 className="mt-3 font-script text-3xl text-plum md:text-4xl">
+          Want to Learn Baking in Person?
+        </h3>
+        <p className="mx-auto mt-3 max-w-xl text-muted-foreground leading-relaxed">
+          Put these baking principles into practice! Mama Thess is available for hire to teach basic baking—whether invited as a guest instructor for your group workshop, or through solo or small group mentoring in her home kitchen in Pateros.
+        </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/about"
+            className="label-caps rounded-full border-2 border-plum bg-white px-5 py-2.5 text-xs text-plum hover:bg-lilac transition-colors"
+          >
+            Read Workshop Details
+          </Link>
+          <Link
+            href="/contact"
+            className="label-caps rounded-full bg-plum px-5 py-2.5 text-xs text-primary-foreground shadow-[0_3px_0_var(--plum-deep)] hover:bg-plum-deep transition-colors"
+          >
+            Inquire / Book Mama Thess
+          </Link>
+        </div>
+      </section>
+
       <p className="mx-auto max-w-6xl px-4 pb-12 text-center text-sm text-muted-foreground md:pb-16">
         Just for fun and learning—Cake 101 is not a menu or a list of shop offerings.
       </p>

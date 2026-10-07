@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { BookOpen, Heart, GraduationCap } from 'lucide-react'
+import { ArrowRight, BookOpen, CheckCircle2, GraduationCap, Heart, Home, Users } from 'lucide-react'
 import { PageIntro } from '@/components/page-intro'
 
 export const metadata: Metadata = {
   title: 'About Mama Thess',
   description:
-    'Get to know Mama Thess: from baking cakes, breads, sweets, and snacks as a personal hobby to creating custom cakes and cupcakes, studying baking through TESDA, and teaching baking lessons.',
+    'Get to know Mama Thess: custom cakes and cupcakes, TESDA certified baking, and available for hire for basic baking workshops and solo or group home kitchen mentoring.',
 }
 
 const storyPhotos = [
@@ -148,10 +148,125 @@ export default function AboutPage() {
         </ul>
       </section>
 
+      {/* Basic Baking Workshops & Mentoring Section */}
+      <section className="bg-gradient-to-b from-white via-lilac-soft/40 to-white py-14 md:py-20 border-y border-plum/10">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="label-caps inline-block rounded-full bg-plum/10 px-4 py-1.5 text-xs text-plum font-bold">
+              Available for Hire & Booking
+            </span>
+            <h2 className="mt-3 font-script text-4xl text-plum md:text-5xl">
+              Learn Basic Baking with Mama Thess
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+              Want to learn how to bake hands-on? Mama Thess is available to teach basic baking classes focused on a single selected product—whether you are organizing a community program or looking for solo or group home kitchen mentoring.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {/* Format 1: Invited Workshop Instructor */}
+            <div className="relative flex flex-col justify-between rounded-3xl border-2 border-plum/15 bg-white p-7 shadow-lg transition-transform hover:-translate-y-1 md:p-8">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="flex size-14 items-center justify-center rounded-2xl bg-plum text-primary-foreground shadow-md">
+                    <Users className="size-7" />
+                  </span>
+                  <span className="label-caps text-xs rounded-full bg-gold/15 px-3 py-1 font-extrabold text-gold">
+                    Group & Organization
+                  </span>
+                </div>
+                <h3 className="mt-5 text-2xl font-extrabold text-plum uppercase tracking-tight">
+                  Invited Workshop Instructor
+                </h3>
+                <p className="mt-2 text-sm font-medium text-plum-deep/80">
+                  For schools, barangays, youth groups, church communities, or corporate events
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Invite Mama Thess as your guest instructor for baking programs and workshops organized by your team or community.
+                </p>
+
+                <ul className="mt-6 space-y-3 text-sm text-plum-deep">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Focused Product:</strong> Master one selected product from scratch (e.g. customized cupcakes, bento cakes, cookies, or sponge cakes).</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Structured Hands-on Training:</strong> Step-by-step demonstration, mixing science, oven temperature handling, and decoration techniques.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Flexible Setup:</strong> Conducted at the venue provided by the organizer, tailored to your group size and schedule.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-dashed border-plum/15">
+                <Link
+                  href="/contact"
+                  className="label-caps flex items-center justify-center gap-2 rounded-full bg-plum py-3 text-center text-sm text-primary-foreground shadow-[0_4px_0_var(--plum-deep)] transition-all hover:bg-plum-deep"
+                >
+                  Invite Mama Thess to your event
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Format 2: Solo or Group Home Kitchen Mentoring */}
+            <div className="relative flex flex-col justify-between rounded-3xl border-2 border-plum/15 bg-white p-7 shadow-lg transition-transform hover:-translate-y-1 md:p-8">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="flex size-14 items-center justify-center rounded-2xl bg-blush text-plum shadow-md">
+                    <Home className="size-7" />
+                  </span>
+                  <span className="label-caps text-xs rounded-full bg-plum/10 px-3 py-1 font-extrabold text-plum">
+                    Solo or by Group
+                  </span>
+                </div>
+                <h3 className="mt-5 text-2xl font-extrabold text-plum uppercase tracking-tight">
+                  Home Kitchen Mentoring
+                </h3>
+                <p className="mt-2 text-sm font-medium text-plum-deep/80">
+                  Solo or small group sessions held at Mama Thess&apos;s home kitchen in Poblacion, Pateros
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  A personalized, hands-on mentoring workshop where you bake side-by-side with Mama Thess in her home kitchen. Learn solo for dedicated focus, or book together with friends or family!
+                </p>
+
+                <ul className="mt-6 space-y-3 text-sm text-plum-deep">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Choose Your Recipe:</strong> Select the exact cake or pastry product you want to learn and bake together from start to finish.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Solo or Group Guidance:</strong> Learn proper creaming, folding, piping techniques, and troubleshooting at your own comfortable pace.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-5 shrink-0 text-plum mt-0.5" />
+                    <span><strong>Take Home Your Bakes:</strong> Bring home your finished fresh-baked creation plus personal recipe guidelines and tips.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-dashed border-plum/15">
+                <Link
+                  href="/contact"
+                  className="label-caps flex items-center justify-center gap-2 rounded-full border-2 border-plum bg-white py-3 text-center text-sm text-plum transition-all hover:bg-lilac-soft"
+                >
+                  Book solo or group mentoring
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-4 mb-12 rounded-[2rem] bg-plum px-6 py-10 text-center text-primary-foreground md:mx-auto md:mb-16 md:max-w-6xl md:px-12 md:py-12">
         <p className="font-script text-4xl md:text-5xl">Let&apos;s make something sweet</p>
         <p className="mx-auto mt-3 max-w-xl leading-relaxed text-primary-foreground/80">
-          Have a celebration in mind? Tell Mama Thess about your cake or cupcake idea.
+          Have a celebration or want to learn baking? Tell Mama Thess about your cake idea or workshop booking.
         </p>
         <Link
           href="/contact"
