@@ -4,20 +4,11 @@ import { CakeImage } from '@/components/cake-image'
 import { SectionLabel } from '@/components/decor'
 import { galleryPhotos, themes, type ThemeSlug } from '@/lib/cakes'
 
-const coverImages: Record<ThemeSlug, string> = {
-  debut: '/images/cakes/debuttttt.webp',
-  wedding: '/images/cakes/wedding.webp',
-  'kids-character': '/images/cakes/cartoonn.webp',
-  milestone: '/images/cakes/number cake.webp',
-  'baby-christening': '/images/cakes/baptism.webp',
-  'custom-designer': '/images/cakes/birthdayyy.webp',
-  'bento-cupcakes': '/images/cakes/birthday (2).webp',
-}
-
 export function ThemeShelf() {
   const items = themes.map((theme) => {
-    const count = galleryPhotos.filter((photo) => photo.theme === theme.slug).length
-    return { theme, count, coverImage: coverImages[theme.slug] }
+    const photos = galleryPhotos.filter((photo) => photo.theme === theme.slug)
+    const coverImage = photos[0]?.image ?? '/images/cakes/highlights.webp'
+    return { theme, count: photos.length, coverImage }
   })
 
   return (
