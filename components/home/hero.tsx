@@ -21,6 +21,7 @@ export function Hero() {
       <Sparkle className="absolute right-[24%] top-44 hidden size-5 text-white/80 md:block" />
 
       <div className="relative mx-auto max-w-6xl px-4 pt-12 text-center md:pt-16">
+
         <h1 className="text-balance">
           <span className="block font-script text-6xl leading-[0.95] text-plum drop-shadow-[0_2px_0_rgba(255,255,255,0.9)] md:text-8xl">
             Mama Thess

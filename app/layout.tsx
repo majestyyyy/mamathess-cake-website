@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Barlow_Semi_Condensed, Lobster } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { CakeMascotCorner } from '@/components/cake-mascot-corner'
 import './globals.css'
 
 const barlow = Barlow_Semi_Condensed({
@@ -46,6 +47,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <CakeMascotCorner />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
